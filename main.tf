@@ -7,14 +7,6 @@ data "aws_ami" "ubuntu" {
   owners = [ "099720109477" ]
 }
 
-data "aws_ami" "amazon_linux" {
-    filter {
-      name = "name"
-      values = ["al2023-ami-2023.12.20261016.0-kernel-6.18-x86_64"]
-    }
-    owners = [ "137112412989" ]
-    most_recent = true
-}
 resource "aws_instance" "web_server" {
     ami = data.aws_ami.ubuntu.id
     instance_type = var.instance_type
