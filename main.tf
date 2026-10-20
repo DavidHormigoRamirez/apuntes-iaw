@@ -12,7 +12,7 @@ resource "aws_instance" "web_server" {
     instance_type = var.instance_type
     key_name = var.key_pair
     tags = {
-        "Name" = "Front end"
+        "Name" = "Web Server"
     }
     vpc_security_group_ids = [ aws_security_group.ssh.id,
     aws_security_group.web.id,
